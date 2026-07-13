@@ -32,7 +32,7 @@ const DialogueBox = forwardRef<TypewriterHandle, Props>(
             </div>
 
             {/* Nội dung */}
-            <div className="mt-6 flex-1 text-2xl leading-relaxed text-[#643831]">
+            <div className="mt-6 flex-1 text-xl leading-relaxed text-[#643831]">
               <Typewriter
                 ref={ref}
                 text={text}
