@@ -1,9 +1,9 @@
-import type { Ending } from "../types/Ending";
+import type { EndingData } from "../types/Ending";
 import { useEffect } from "react";
 import SoundManager from "../utils/SoundManager";
 
 interface Props {
-  ending: Ending;
+  ending: EndingData;
   score: number;
   onRestart: () => void;
 }

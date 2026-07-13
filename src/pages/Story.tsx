@@ -8,7 +8,7 @@ import DialogueBox from "../components/DialogueBox";
 import type { TypewriterHandle } from "../components/Typewriter";
 import { AnimatePresence } from "framer-motion";
 import ChoiceBox from "../components/ChoiceBox";
-import type { Choice } from "../data/story";
+import type { Choice } from "../types/story";
 import { endings } from "../data/endings";
 import type { EndingData } from "../types/Ending";
 import Ending from "./Ending";
@@ -17,8 +17,11 @@ import SoundManager from "../utils/SoundManager";
 import correctImg from "../assets/ui/correct.png";
 import wrongImg from "../assets/ui/wrong.png";
 
+type CharacterKey = keyof typeof endings;
+
 export default function Story() {
     const { character } = useParams();
+    const characterKey = character as CharacterKey;
 
     const story = stories[character as keyof typeof stories];
 
@@ -35,14 +38,12 @@ export default function Story() {
     const [score, setScore] = useState(0);
 
     const showEnding = () => {
-        if (!character) return;
-
         if (score >= 80) {
-            setEnding(endings[character].good);
+            setEnding(endings[characterKey].good);
         } else if (score >= 50) {
-            setEnding(endings[character].normal);
+            setEnding(endings[characterKey].normal);
         } else {
-            setEnding(endings[character].bad);
+            setEnding(endings[characterKey].bad);
         }
 
     };
@@ -72,23 +73,24 @@ export default function Story() {
 
     const next = () => {
         SoundManager.click.play();
-
-        if (!typewriterRef.current?.isFinished()) {
-            typewriterRef.current.skip();
+    
+        const typewriter = typewriterRef.current;
+    
+        if (!typewriter?.isFinished()) {
+            typewriter?.skip();
             return;
         }
-
+    
         if (dialogue.choices) {
             return;
         }
-
+    
         if (dialogue.nextId) {
             setCurrentId(dialogue.nextId);
         } else {
             showEnding();
         }
-
-    }
+    };
 
     useEffect(() => {
 
@@ -128,7 +130,7 @@ export default function Story() {
                     <CharacterSprite
                         key={character.id}
                         image={character.image}
-                        position={character.position}
+                        position={character.position as "left" | "center" | "right"}
                         active={character.id === dialogue.speaker}
                         emoteImage={character.id === dialogue.speaker ? emoteImage : null}
                     />
