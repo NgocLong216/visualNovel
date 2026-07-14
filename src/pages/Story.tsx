@@ -27,7 +27,7 @@ export default function Story() {
 
     const [currentId, setCurrentId] = useState(1);
 
-    const dialogue = story.find(item=>item.id===currentId)!;
+    const dialogue = story.find(item => item.id === currentId)!;
 
     const [emoteImage, setEmoteImage] = useState<string | null>(null);
 
@@ -51,7 +51,7 @@ export default function Story() {
     const handleChoice = (choice: Choice) => {
 
         setScore(prev => prev + (choice.score ?? 0));
-    
+
         if ((choice.score ?? 0) >= 10) {
             setEmoteImage(correctImg);
             console.log(correctImg);
@@ -60,31 +60,31 @@ export default function Story() {
             setEmoteImage(wrongImg);
             SoundManager.wrong.play();
         }
-    
+
         setTimeout(() => {
-    
+
             setEmoteImage(null);
-    
+
             setCurrentId(choice.nextId);
-    
+
         }, 1200);
-    
+
     };
 
     const next = () => {
         SoundManager.click.play();
-    
+
         const typewriter = typewriterRef.current;
-    
+
         if (!typewriter?.isFinished()) {
             typewriter?.skip();
             return;
         }
-    
+
         if (dialogue.choices) {
             return;
         }
-    
+
         if (dialogue.nextId) {
             setCurrentId(dialogue.nextId);
         } else {
@@ -95,11 +95,11 @@ export default function Story() {
     useEffect(() => {
 
         SoundManager.bgm.play();
-    
+
         return () => {
             SoundManager.bgm.stop();
         };
-    
+
     }, []);
 
     if (ending) {
