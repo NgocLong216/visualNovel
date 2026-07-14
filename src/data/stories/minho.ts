@@ -1137,7 +1137,7 @@ export const minhoStory = [
     
         speaker: "Minho",
     
-        nextId: 60,
+        nextId: 61,
     
         text: "Không bao giờ! Đó là mô hình kế hoạch hóa tập trung bao cấp của Alexei rồi, và nó rất xơ cứng ở giai đoạn sau. Ở đây, chúng tôi tôn trọng sở hữu tư nhân và cần sự năng động của thị trường. Chính phủ của tôi không làm thay doanh nghiệp, chúng tôi làm điều khác vĩ mô hơn!",
     
@@ -1197,7 +1197,7 @@ export const minhoStory = [
     
         speaker: "Minho",
     
-        nextId: 60,
+        nextId: 61,
     
         text: "Tuyệt đỉnh! Bạn đã bóc trần được bí mật của 'Kỳ tích châu Á' rồi! Thị trường tự do là con ngựa bất kham, nếu không có bàn tay kiến tạo của Chính phủ định hướng vào công nghệ cao, nó sẽ chỉ lao vào đầu cơ làm giàu ngắn hạn. Sự kết hợp giữa Nhà nước định hướng và thị trường năng động chính là công thức tối thượng!",
     
@@ -1257,7 +1257,7 @@ export const minhoStory = [
     
         speaker: "Minho",
     
-        nextId: 60,
+        nextId: 61,
     
         text: "Phó mặc cho thị trường tự điều tiết sao? Đó là luận điểm ru ngủ của gã James West để ép các nước nghèo mở cửa cho chúng xâu xé! Nếu Chính phủ không đứng ra bảo hộ, bảo ban và ép ngân hàng bơm vốn thời kỳ đầu, doanh nghiệp nội địa đã bị các tập đoàn khổng lồ nước ngoài băm vằm từ trong trứng nước rồi. Ngây thơ kiểu đó chỉ có nước làm đầy tớ thiên hạ mãi mãi!",
     
