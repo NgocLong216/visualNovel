@@ -2311,17 +2311,17 @@ export const jamesStory = [
             {
                 text: "A. Giữ nguyên sự bóc lột, tăng giờ làm của công nhân lên 18 tiếng/ngày để tối đa hóa lợi nhuận.",
                 nextId: 112,
-                isCorrect: false,
+                score: 0,
             },
             {
                 text: "B. Đập phá toàn bộ máy móc hơi nước, quay trở lại thời kỳ lao động thủ công.",
                 nextId: 114,
-                isCorrect: false,
+                score: 5,
             },
             {
                 text: "C. Giữ nền tảng máy móc hiện đại nhưng cải thiện điều kiện làm việc, tăng lương, giảm giờ làm và hướng tới công bằng xã hội.",
                 nextId: 116,
-                isCorrect: true,
+                score: 10,
             },
         ],
     },
